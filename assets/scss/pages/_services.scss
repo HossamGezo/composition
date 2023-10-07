@@ -1,0 +1,43 @@
+// Import Helpers Folder Contents
+@use "../helpers/variables" as *;
+@use "../helpers/functions" as *;
+@use "../helpers/mixins" as *;
+/*
+-----------------------
+  Services Section
+-----------------------
+*/
+.services {
+  .our-services {
+    @include grid(400px, 20px);
+    @include media(sm) {
+      @include grid(300px, 20px);
+    }
+    .service {
+      padding: 20px 10px;
+      border-radius: 7px;
+      background-color: color(whiteColor);
+      &__head {
+        @include flex(null, null, null, center, 30px);
+        @include media(sm) {
+          @include flex(column, null, center, center, 20px);
+        }
+        &--icon {
+          font-size: 35px;
+        }
+        &--title {
+          color: color(textColor);
+          letter-spacing: 1.2px;
+        }
+      }
+      &__desc {
+        color: color(textColor);
+        margin: 20px 0;
+        line-height: 1.6;
+      }
+      &__more {
+        color: color(primaryColor);
+      } 
+    }
+  }
+}

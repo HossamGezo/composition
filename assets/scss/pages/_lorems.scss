@@ -1,0 +1,19 @@
+// Import Helpers Files
+@use "../helpers/variables" as *;
+@use "../helpers/functions" as *;
+@use "../helpers/mixins" as *;
+/*
+-----------------------
+  Lorems Section
+-----------------------
+*/
+.lorems {
+  @include grid(400px, 30px);
+  @include media(sm) {
+    @include grid(200px, 30px);
+  }
+  padding: 50px 0;
+  img {
+    width: 100%;
+  }
+}

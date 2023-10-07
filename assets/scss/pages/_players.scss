@@ -1,0 +1,45 @@
+// Import Helpers Folder Contents
+@use "../helpers/variables" as *;
+@use "../helpers/functions" as *;
+@use "../helpers/mixins" as *;
+/*
+-----------------------
+  players Section
+-----------------------
+*/
+.players {
+  .our-players {
+    @include grid(250px, 20px);
+    .player {
+      border-radius: 7px;
+      background-color: color(whiteColor);
+      &__head {
+        @include flex(column, null, center, flex-start, 10px);
+        &--img {
+          width: 100%;
+          height: 210px;
+        }
+        &--title {
+          padding: 0 10px;
+          color: color(textColor);
+          letter-spacing: 1.2px;
+          span {
+            font-size: 16px;
+            font-weight: normal;
+          }
+        }
+      }
+      &__desc {
+        padding: 0 10px;
+        color: color(textColor);
+        margin: 10px 0;
+        line-height: 1.6;
+      }
+      &__more {
+        display: inline-block;
+        padding: 10px;
+        color: color(primaryColor);
+      } 
+    }
+  }
+}

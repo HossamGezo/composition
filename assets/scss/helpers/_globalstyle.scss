@@ -1,0 +1,34 @@
+// Import Helpers Files
+@use "variables" as *;
+@use "functions" as *;
+@use "mixins" as *;
+// Start Global Styling
+* {
+  @include prefixe(box-sizing, border-box);
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: color(bodyColor);
+  font: {
+    family: Tahoma;
+    size: 16px;
+  }
+}
+ul li,
+ol li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+button, a {
+  cursor: pointer;
+}
+button,
+input,
+textarea,
+select,
+optgroup {
+  font-family: inherit;
+}

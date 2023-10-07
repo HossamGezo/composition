@@ -1,0 +1,47 @@
+// Import Helpers Folder Contents
+@use "../helpers/variables" as *;
+@use "../helpers/functions" as *;
+@use "../helpers/mixins" as *;
+// ------------------------------
+.mybtn {
+  width: 120px;
+  background-color: rgba(color(primaryColor), 0.8);
+  color: color(whiteColor);
+  padding: 10px 15px;
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: 0.3s linear;
+  &:hover {
+    background-color: color(primaryColor);
+  }
+}
+.the-toggler {
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 45.6px;
+  span {
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: color(primaryColor);
+    &:nth-child(2) {
+      margin: 6px 0;
+    }
+  }
+  @include media(sm) {
+    display: block;
+  }
+  @include media(md) {
+    display: none;
+  }
+  @include media(lg) {
+    display: none;
+  }
+  @include media(xl) {
+    display: none;
+  }
+}

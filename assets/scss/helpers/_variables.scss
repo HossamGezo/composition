@@ -1,0 +1,19 @@
+// Media Breakpoints Map
+$media-breakpoints: (
+  sm: "(max-width: 767px)",
+  md: "(min-width: 768px)",
+  lg: "(min-width: 992px)",
+  xl: "(min-width: 1200px)",
+);
+// Color Breakpoints Map
+$color-breakpoints: (
+  primaryColor: #E2494C,
+  textColor: #9C9C9C,
+  whiteColor: #FFFFFF,
+  blackColor: #000000,
+  bodyColor: #F6F6F6,
+  borderColor: #CCCCCC,
+  hoverColor: #DDDDDD,
+);
+// Prefixe Breakpoints Arr
+$prefixe-breakpoints: "-webkit-", "-moz-", "-o-", "-ms-";

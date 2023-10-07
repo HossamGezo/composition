@@ -1,0 +1,8 @@
+@use "variables" as *;
+@function breakpoints($mapName, $mapKey) {
+  @return map-get($mapName, $mapKey);
+}
+// Color Function 
+@function color($color) {
+  @return map-get($color-breakpoints, $color);
+}

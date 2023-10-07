@@ -1,0 +1,52 @@
+// Import Variables & Functions
+@use "variables" as *;
+@use "functions" as *;
+// Media Mixin
+@mixin media ($screenMeasure) {
+  @media #{breakpoints($media-breakpoints, $screenMeasure)} {
+    @content;
+  }
+}
+// Overlay Mixin
+@mixin overlay ($overlayColor, $opacityColor) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(map-get($color-breakpoints, $overlayColor), $opacityColor);
+}
+// Prefixe Mixin
+@mixin prefixe($property, $value) {
+  @each $prefixe in $prefixe-breakpoints {
+    #{$prefixe + $property}: $value;
+  }
+  #{$property}: $value;
+}
+// Flex Mixin
+@mixin flex ($direction, $wrap, $justify, $align, $gap) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+// Grid Mixin
+@mixin grid ($col, $gap) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($col, 1fr));
+  gap: $gap;
+}
+// Heading Decoration
+@mixin headingDecoration ($width, $height, $color, $left, $bottom) {
+  &::before {
+    content: "";
+    position: absolute;
+    width: $width;
+    height: $height;
+    background-color: color($color);
+    left: $left;
+    bottom: $bottom;
+  }
+}

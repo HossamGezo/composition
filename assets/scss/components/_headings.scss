@@ -1,0 +1,35 @@
+// Import Helpers Files
+@use "../helpers/variables" as *;
+@use "../helpers/functions" as *;
+@use "../helpers/mixins" as *;
+/*
+-----------------------
+  Components Section
+-----------------------
+*/
+.head {
+  position: relative;
+  .special-heading {
+    background-color: color(primaryColor);
+    color: color(whiteColor);
+    width: 300px;
+    margin: 40px auto;
+    text-align: center;
+    padding: 7px;
+    letter-spacing: 1.5px;
+    border-radius: 7px;
+    text-transform: uppercase;
+    position: relative;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background-color: color(borderColor);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+}

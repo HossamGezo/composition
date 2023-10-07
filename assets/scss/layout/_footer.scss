@@ -1,0 +1,141 @@
+// Import Helpers Folder Contents
+@use "../helpers/variables" as *;
+@use "../helpers/functions" as *;
+@use "../helpers/mixins" as *;
+/*
+-----------------------
+  Footer Section
+-----------------------
+*/
+.footer {
+  background-color: color(bodyColor);
+  background-color: #ececec;
+  padding-top: 50px;
+  &__content {
+    padding: 12px 10px;
+    @include media(sm) {
+      text-align: center;
+      @include flex(column, null, center, null, 30px);
+    }
+    @include media(md) {
+      @include grid(300px, 20px);
+    }
+    @include media(lg) {
+      @include grid(250px, 20px);
+    }
+    &--latest {
+      grid-column: span 2;
+      h3 {
+        width: fit-content;
+        font-weight: normal;
+        color: color(textColor);
+        margin-bottom: 20px;
+        position: relative;
+        @include headingDecoration(55%, 2px, primaryColor, 0, -10px);
+        @include media(sm) {
+          margin-bottom: 30px;
+        }
+      }
+      .blogs {
+        @include media(sm) {
+          border-bottom: 1px dashed color(primaryColor);
+        }
+        .blog {
+          @include flex (null, null, space-between, center, 20px);
+          @include media(sm) {
+            @include flex(column, null, center, center, 20px);
+          }
+          margin-bottom: 20px;
+          img {
+            width: 200px;
+            border: 5px solid #ececec;
+            outline: 1px solid color(borderColor);
+          }
+          &-content {
+            color: color(textColor);
+            &-head {
+              font-size: 17px;
+              color: color(primaryColor);
+              font-weight: bold;
+              margin-bottom: 10px;
+            }
+            &-desc {
+              font-size: 15px;
+              line-height: 1.6;
+            }
+          }
+        }
+      }
+    }
+    &--address {
+      grid-column: span 1;
+      @include media(sm) {
+        padding-bottom: 20px;
+        border-bottom: 1px dashed color(primaryColor);
+      }
+      h3 {
+        width: fit-content;
+        font-weight: normal;
+        color: color(textColor);
+        margin-bottom: 20px;
+        position: relative;
+        @include headingDecoration(55%, 2px, primaryColor, 0, -10px);
+      }
+      address {
+        font-size: 14px;
+        .address {
+          color: color(textColor);
+          @include flex(column, null, center, flex-start, 5px);
+          position: relative;
+          @include headingDecoration(80%, 1px, borderColor, 0, -20px);
+        }
+        .tel {
+          color: color(textColor);
+          margin: 30px 0;
+          @include flex(column, null, center, flex-start, 5px);
+          position: relative;
+          @include headingDecoration(80%, 1px, borderColor, 0, -20px);
+          .email {
+            color: color(primaryColor);
+          }
+        }
+        .office-hours {
+          color: color(textColor);
+          @include flex(column, null, center, flex-start, 5px);
+        }
+      }
+    }
+    &--contact {
+      grid-column: span 1;
+      h3 {
+        width: fit-content;
+        font-weight: normal;
+        color: color(textColor);
+        margin-bottom: 20px;
+        position: relative;
+        @include headingDecoration(55%, 2px, primaryColor, 0, -10px);
+      }
+      input, textarea {
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+        border: none;
+        outline: none;
+      }
+      textarea {
+        height: 120px;
+        resize: none;
+      }
+    }
+  }
+  &__copyright {
+    color: color(textColor);
+    padding: 30px 10px;
+    border-top: 1px solid color(borderColor);
+    @include flex(null, null, space-between, center, null);
+    @include media(sm) {
+      font-size: 13px;
+      @include flex(column, null, space-between, center, 10px);
+    }
+  }
+}
