@@ -9,9 +9,11 @@
 */
 .services {
   .our-services {
-    @include grid(400px, 20px);
     @include media(sm) {
       @include grid(300px, 20px);
+    }
+    @include media(md) {
+      @include grid(350px, 20px)
     }
     .service {
       padding: 20px 10px;
